@@ -26,6 +26,9 @@ public class AuctionData : ScriptableObject
 
     [SerializeField] private FloatVariable m_highestBid;
     [SerializeField] private StorageData m_currentStorage;
+    public FloatVariable BetAmount { get => m_betAmount; private set => m_betAmount = value; }
+
+    [SerializeField] private FloatVariable m_betAmount;
 
     private bool m_auctionIsActive = false;
 

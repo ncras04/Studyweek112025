@@ -29,7 +29,15 @@ public class PlayerInput : MonoBehaviour
 
     private void OnInputCanceled(InputAction.CallbackContext context)
     {
-        m_preBetTimer.SetTimer();
+        if (m_player.Budget.Value > m_auctionData.HighestBid.Value)
+        {
+            if (m_player.TempBudget.Value >= m_auctionData.BetAmount.Value)
+            {
+                m_player.PreBet.Value += m_auctionData.BetAmount.Value;
+                m_player.TempBudget.Value -= m_auctionData.BetAmount.Value;
+                m_preBetTimer.SetTimer();
+            }
+        }
     }
 
     private void OnInput(InputAction.CallbackContext context)
@@ -37,11 +45,8 @@ public class PlayerInput : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    void OnTimerEnd(Timer _timer)
+    void OnTimerEnd(Timer _)
     {
-        if(m_player.TempBudget.Value > m_auctionData.HighestBid.Value)
-        {
 
-        }
     }
 }
