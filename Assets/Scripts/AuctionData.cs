@@ -30,7 +30,7 @@ public class AuctionData : ScriptableObject
 
     [SerializeField] private FloatVariable m_betAmount;
 
-    private bool m_auctionIsActive = false;
+    private bool m_auctionIsActive = true;
 
     public bool AuctionIsActive
     {
@@ -59,5 +59,4 @@ public class AuctionData : ScriptableObject
     {
         AuctionIsActive = _isActive;
     }
-
 }

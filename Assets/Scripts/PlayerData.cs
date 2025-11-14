@@ -27,8 +27,4 @@ public class PlayerData : ScriptableObject
     [SerializeField] private AuctionData m_auctionData;
 
     public void SetPlayerName(string _newName) => PlayerName = _newName;
-    public bool CheckWin()
-    {
-        return true;
-    }
 }

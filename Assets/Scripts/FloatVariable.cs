@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FloatVariable", menuName = "Scriptable Objects/FloatVariable")]
@@ -35,5 +36,10 @@ public class FloatVariable : ScriptableObject
                 m_valueChanged?.Invoke(m_value);
             }
         }
+    }
+
+    public void SilentReset(float _newValue)
+    {
+        m_value = _newValue;
     }
 }

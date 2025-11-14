@@ -36,4 +36,9 @@ public class IntVariable : ScriptableObject
             }
         }
     }
+
+    public void SilentReset(int _newValue)
+    {
+        m_value = _newValue;
+    }
 }
