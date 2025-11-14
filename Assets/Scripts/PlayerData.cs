@@ -4,15 +4,15 @@ using UnityEngine.InputSystem;
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Scriptable Objects/PlayerData")]
 public class PlayerData : ScriptableObject
 {
-    public string PlayerName { get; private set; }
-    public InputActionReference Action { get; private set; }
+    public string PlayerName { get => m_playerName; private set => m_playerName = value; }
+    public InputActionReference Action { get => m_action; private set => m_action = value; }
 
-    public FloatVariable Budget { get; private set; }
-    public FloatVariable TempBudget { get; private set; }
-    public FloatVariable PreBet { get; private set; }
-    public FloatVariable CurrentBet { get; private set; }
+    public FloatVariable Budget { get => m_budget; private set => m_budget = value; }
+    public FloatVariable TempBudget { get => m_tempBudget; private set => m_tempBudget = value; }
+    public FloatVariable PreBet { get => m_preBet; private set => m_preBet = value; }
+    public FloatVariable CurrentBet { get => m_currentBet; private set => m_currentBet = value; }
 
-    public FloatVariable Wins { get; private set; }
+    public FloatVariable Wins { get => m_wins; private set => m_wins = value; }
 
     [SerializeField] private string m_playerName;
     [SerializeField] private InputActionReference m_action;

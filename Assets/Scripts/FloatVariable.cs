@@ -20,7 +20,7 @@ public class FloatVariable : ScriptableObject
         }
     }
 
-    private float m_value;
+    [SerializeField] private float m_value;
     public float Value
     {
         get
