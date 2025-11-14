@@ -99,3 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8e2d211a4cc9d4aa467ba87feca1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_mesh: {fileID: 0}
+  WorthValue: 1
+  m_randomSouvenir:
+  - {fileID: 11400000, guid: 94ce64ccfcefb1d4d9259e090ce4f700, type: 2}
+  - {fileID: 11400000, guid: c39f6634fbcdfec4b866aec213d9535a, type: 2}

@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89745cc359a8bb545b227ec7bce2ff14, type: 3}
-  m_Name: SouvenirWorthValue
+  m_Script: {fileID: 11500000, guid: bde78f24cd0b21241a0869f8a5bdbfcc, type: 3}
+  m_Name: Souvenir2
   m_EditorClassIdentifier: 
-  m_value: 0
+  m_mesh: {fileID: 2100000, guid: b781293b750042045b4a81f7785ceb65, type: 2}
+  WorthValue: 2
+  conditions: 1
