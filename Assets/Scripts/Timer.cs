@@ -12,8 +12,6 @@ public class Timer
     {
         m_setTime = _setTime;
         timerEnd = _onTimerEnd;
-
-        SetTimer();
     }
 
     public void SetTimer()
