@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UIAuction 1
   m_EditorClassIdentifier: 
   m_highestBid: {fileID: 11400000, guid: 0672fe1e0bde50c4cad08f42c38031dd, type: 2}
-  m_currentStorage: {fileID: 11400000, guid: 71b30b2c998687a40bf0d034b4cfd6d2, type: 2}
+  m_currentStorage: {fileID: 11400000, guid: 1b6a5bd84563f8847a934b180416cae3, type: 2}
   m_betAmount: {fileID: 11400000, guid: 8a712eefa68c2f344b1d9a5ffdc86533, type: 2}

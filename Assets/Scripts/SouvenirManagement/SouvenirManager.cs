@@ -9,7 +9,7 @@ public class SouvenirManager : MonoBehaviour
     private float WorthValue;
 
 
-    void Start()
+    void Awake()
     {
         RandomItems();
         Invoke("ValueSum", 2);

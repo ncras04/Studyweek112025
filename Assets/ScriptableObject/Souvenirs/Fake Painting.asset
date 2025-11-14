@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fake Painting
   m_EditorClassIdentifier: 
   m_mesh: {fileID: 2100000, guid: 701686cc38b69cd4c97c0b49d0d79ca1, type: 2}
-  WorthValue: 2
+  WorthValue: 200
   conditions: 1

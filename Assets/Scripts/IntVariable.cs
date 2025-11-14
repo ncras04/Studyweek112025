@@ -20,7 +20,7 @@ public class IntVariable : ScriptableObject
         }
     }
 
-    private int m_value;
+    [SerializeField] private int m_value;
     public int Value
     {
         get

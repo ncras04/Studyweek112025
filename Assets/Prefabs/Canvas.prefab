@@ -492,6 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5174951667269116141}
+  - component: {fileID: 6612466495321496659}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -517,6 +518,25 @@ Transform:
   - {fileID: 7989250689674323828}
   m_Father: {fileID: 6939854027795825259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6612466495321496659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431889509578935092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c988b06969f8d33438dd83aa7a6590ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_player: {fileID: 11400000, guid: fc3fd6e3adcc2e547b687fa8fcd0d72c, type: 2}
+  m_data: {fileID: 11400000, guid: bfba1c9d84c9f374cac9a507ad7b9437, type: 2}
+  m_budgetText: {fileID: 2833964755688140907}
+  m_preBetText: {fileID: 7012861349182435549}
+  m_preBetAnimator: {fileID: 244288411375840606}
+  m_currentBetText: {fileID: 8519763303513743521}
+  m_currency: 36
 --- !u!1 &3871331326382506239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,8 +1763,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c988b06969f8d33438dd83aa7a6590ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 11400000, guid: b686fac283fde6943bdcbf95fb70e842, type: 2}
+  m_player: {fileID: 11400000, guid: 01bea499684c1af40a230add30ae2bf1, type: 2}
+  m_data: {fileID: 11400000, guid: bfba1c9d84c9f374cac9a507ad7b9437, type: 2}
   m_budgetText: {fileID: 6133381756425773908}
+  m_preBetText: {fileID: 8159157438366431975}
+  m_preBetAnimator: {fileID: 7782999891981666912}
+  m_currentBetText: {fileID: 9212620859616109772}
   m_currency: 36
 --- !u!1 &5103899436385427603
 GameObject:
@@ -2458,8 +2482,9 @@ GameObject:
   - component: {fileID: 7611736493165826057}
   - component: {fileID: 2112342161530651418}
   - component: {fileID: 7878196046606887595}
+  - component: {fileID: 4139786745873210346}
   m_Layer: 5
-  m_Name: GameUI
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2553,6 +2578,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4139786745873210346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814532823016381819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef84af2ad7427644e8eda39cf4e5462d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_highestBid: {fileID: 9039901525534233222}
+  m_countDown: {fileID: 227665576977355138}
+  m_data: {fileID: 11400000, guid: bfba1c9d84c9f374cac9a507ad7b9437, type: 2}
+  m_system: {fileID: 0}
 --- !u!1 &8435535595755399787
 GameObject:
   m_ObjectHideFlags: 0
