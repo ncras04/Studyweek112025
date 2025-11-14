@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89745cc359a8bb545b227ec7bce2ff14, type: 3}
   m_Name: UITestBudget
   m_EditorClassIdentifier: 
-  m_value: 555
+  m_value: 10000

@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         m_player.Budget.ValueChanged += OnBudgetChanged;
+        //m_player.PreBet.ValueChanged += OnPreBetChanged;
         InitializeUI();
     }
 
@@ -19,8 +20,12 @@ public class PlayerUI : MonoBehaviour
     {
         m_budgetText.text = m_player.Budget.Value.ToString() + m_currency;
     }
+    public void ReduceBudget(float _newBudget) 
+    {
+        _newBudget -= 100;
+    }   
 
-    private void OnBudgetChanged(float _newBudget)
+    public void OnBudgetChanged(float _newBudget)
     {
         m_budgetText.text = _newBudget.ToString() + m_currency;
     }
@@ -29,11 +34,10 @@ public class PlayerUI : MonoBehaviour
     void Update()
     {
         
+
+
+
     }
 
-    public void ReduceBudget() 
-    {
-        
     
-    }
 }
