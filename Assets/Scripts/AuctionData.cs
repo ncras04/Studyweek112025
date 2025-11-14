@@ -1,15 +1,60 @@
 using JetBrains.Annotations;
 using NUnit.Framework;
 using System;
+using System.Data.SqlTypes;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AuctionData", menuName = "Scriptable Objects/AuctionData")]
 public class AuctionData : ScriptableObject
 {
-    private FloatVariable m_highestBid;
-    //private StorageData m_currentStorage;
+    public event Action<bool> AuctionIsActiveChanged
+    {
+        add
+        {
+            m_auctionIsActiveChanged -= value;
+            m_auctionIsActiveChanged += value;
+        }
+        remove
+        {
+            m_auctionIsActiveChanged -= value;
+        }
+    }
 
-    private event Action m_auctionUp;
-    private Timer m_bettingTimer;
-    private Timer m_countDown;
+    public FloatVariable HighestBid { get; private set; }
+    public StorageData CurrentStorage { get; private set; }
+    public bool AuctionOver { get; private set; }
+
+    [SerializeField] private FloatVariable m_highestBid;
+    [SerializeField] private StorageData m_currentStorage;
+
+    private bool m_auctionIsActive = false;
+
+    public bool AuctionIsActive
+    {
+        get
+        {
+            return m_auctionIsActive;
+        }
+        set
+        {
+            if (m_auctionIsActive != value)
+            {
+                m_auctionIsActive = value;
+                m_auctionIsActiveChanged?.Invoke(m_auctionIsActive);
+            }
+        }
+    }
+
+    private event Action<bool> m_auctionIsActiveChanged;
+
+    public void SetNextStorage(StorageData _newStorage)
+    {
+        CurrentStorage = _newStorage;
+    }
+
+    public void SetActive(bool _isActive)
+    {
+        AuctionIsActive = _isActive;
+    }
+
 }
