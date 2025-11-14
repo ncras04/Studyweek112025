@@ -14,6 +14,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "P2",
+                    "type": "Button",
+                    "id": "716048bd-0c8b-4c65-aad3-faffb96d4104",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -25,6 +34,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "P1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ec80222-fd05-43aa-bdac-3abae5ed83cd",
+                    "path": "<Keyboard>/l",
+                    "interactions": "Hold(duration=1E-05)",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

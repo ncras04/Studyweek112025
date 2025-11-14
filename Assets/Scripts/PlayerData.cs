@@ -29,7 +29,7 @@ public class PlayerData : ScriptableObject
 
     public void SetPlayerName(string _newName) => PlayerName = _newName;
 
-    public void EndAuction()
+    public void ResetAuction()
     {
         m_tempBudget.SilentReset(m_budget.Value);
         m_currentBet.SilentReset(0);

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033731fdbadc7ac48b085fd61e1f3e02, type: 3}
+  m_Name: UIAuction 1
+  m_EditorClassIdentifier: 
+  m_highestBid: {fileID: 11400000, guid: 0672fe1e0bde50c4cad08f42c38031dd, type: 2}
+  m_currentStorage: {fileID: 11400000, guid: 71b30b2c998687a40bf0d034b4cfd6d2, type: 2}
+  m_betAmount: {fileID: 11400000, guid: 8a712eefa68c2f344b1d9a5ffdc86533, type: 2}

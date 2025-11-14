@@ -27,6 +27,11 @@ public class AuctionSystem : MonoBehaviour
     }
     private event Action<float> m_countdownIntervalReached;
 
+    private void Awake()
+    {
+        InitAuction();
+    }
+
     public void InitAuction()
     {
         m_bettingTimer = new Timer(m_bettingTime, OnBettingTimerEnd);
@@ -39,7 +44,7 @@ public class AuctionSystem : MonoBehaviour
 
     private float CalculateStartingBid()
     {
-        return m_data.CurrentStorage.SouvenirCount.Value;
+        return 500; //TODO Calculate Starting Bid
     }      
 
     private void OnCountdownTimerEnd(Timer timer)
@@ -52,10 +57,9 @@ public class AuctionSystem : MonoBehaviour
             {
                 player.Wins.Value += m_data.CurrentStorage.StorageValue.Value;
                 player.Budget.Value = player.TempBudget.Value;
-                
             }
 
-            player.EndAuction();
+            player.ResetAuction();
         }
     }
     private void OnBettingTimerEnd(Timer timer)

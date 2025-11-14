@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerData m_player;
     [SerializeField] private AuctionData m_auctionData;
-
-    private bool m_biddingCast;
+    private float m_potentialBid;
 
     public event Action Fault
     {
@@ -33,22 +32,13 @@ public class PlayerController : MonoBehaviour
     {
         m_player.Action.action.performed += OnInput;
         m_player.Action.action.canceled += OnInputCanceled;
-        m_auctionData.HighestBid.ValueChanged += OnNewBid;
-
-
-    }
-
-    private void OnNewBid(float _)
-    {
-        m_biddingCast = true;
     }
 
     private void Awake()
     {
         m_auctionData.SetActive(true);
         m_preBetTimer = new Timer(m_preBetTime, OnTimerEnd);
-        m_player.TempBudget.SilentReset(m_player.Budget.Value);
-        m_player.PreBet.SilentReset(0);
+        m_player.ResetAuction();
     }
 
     private void Update()
@@ -60,9 +50,10 @@ public class PlayerController : MonoBehaviour
     {
         if (m_player.Budget.Value > m_auctionData.HighestBid.Value)
         {
-            if (m_player.TempBudget.Value >= (m_player.PreBet.Value + m_auctionData.BetAmount.Value))
+            if (m_player.Budget.Value >= (m_player.CurrentBet.Value + m_player.PreBet.Value + m_auctionData.BetAmount.Value))
             {
                 m_player.PreBet.Value += m_auctionData.BetAmount.Value;
+                m_potentialBid = m_auctionData.HighestBid.Value + m_player.PreBet.Value;
                 m_preBetTimer.SetTimer();
                 return;
             }
@@ -80,16 +71,15 @@ public class PlayerController : MonoBehaviour
     {
         if (m_auctionData.AuctionIsActive)
         {
-            if (m_biddingCast && (m_auctionData.HighestBid.Value > (m_player.CurrentBet.Value += m_player.PreBet.Value)))
+            if (m_potentialBid > m_auctionData.HighestBid.Value)
             {
-                m_player.CurrentBet.Value += m_player.PreBet.Value;
-                m_player.TempBudget.Value -= m_player.PreBet.Value;
+                m_player.CurrentBet.Value = m_potentialBid;
+                m_player.TempBudget.Value = m_player.Budget.Value - m_player.CurrentBet.Value;
                 m_auctionData.HighestBid.Value = m_player.CurrentBet.Value;
                 m_player.PreBet.SilentReset(0);
-                m_biddingCast = false;
                 return;
             }
-            
+
             FaultyBet();
         }
     }
