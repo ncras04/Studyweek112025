@@ -56,13 +56,9 @@ public class EventTimer : Timer
     private float m_interval;
     private float m_timeSinceInterval = 0;
 
-    public EventTimer(float _interval, float _setTime, Action<Timer> _onTimerEnd) : base(_setTime, _onTimerEnd)
+    public EventTimer(float _interval, float _setTime, Action<Timer> _onTimerEnd, Action<float> _onCountdownInterval) : base(_setTime, _onTimerEnd)
     {
         m_interval = _interval;
-    }
-
-    public EventTimer(float _setTime, Action<Timer> _onTimerEnd, Action<float> _onCountdownInterval) : base(_setTime, _onTimerEnd)
-    {
         m_intervalReached = _onCountdownInterval;
     }
 

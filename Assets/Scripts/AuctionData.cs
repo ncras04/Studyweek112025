@@ -22,7 +22,6 @@ public class AuctionData : ScriptableObject
 
     public FloatVariable HighestBid { get => m_highestBid; private set => m_highestBid = value; }
     public StorageData CurrentStorage { get => m_currentStorage; private set => m_currentStorage = value; }
-    public bool AuctionOver { get; private set; }
 
     [SerializeField] private FloatVariable m_highestBid;
     [SerializeField] private StorageData m_currentStorage;

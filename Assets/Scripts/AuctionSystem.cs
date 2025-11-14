@@ -9,6 +9,7 @@ public class AuctionSystem : MonoBehaviour
 
     [SerializeField] private float m_bettingTime;
     [SerializeField] private float m_countdownTime;
+    [SerializeField] private float m_interval;
     [SerializeField] private AuctionData m_data;
     [SerializeField] private List<PlayerData> m_players;
 
@@ -17,7 +18,7 @@ public class AuctionSystem : MonoBehaviour
     void Start()
     {
         m_bettingTimer = new Timer(m_bettingTime, OnBettingTimerEnd);
-        m_countDown = new EventTimer(m_countdownTime, OnCountdownTimerEnd, OnCountdownInterval);
+        m_countDown = new EventTimer(m_interval, m_countdownTime, OnCountdownTimerEnd, OnCountdownInterval);
     }
 
     private void OnCountdownTimerEnd(Timer timer)
