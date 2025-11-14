@@ -27,23 +27,37 @@ public class AuctionSystem : MonoBehaviour
     }
     private event Action<float> m_countdownIntervalReached;
 
-    void Start()
+    public void InitAuction()
     {
         m_bettingTimer = new Timer(m_bettingTime, OnBettingTimerEnd);
         m_countDown = new EventTimer(m_interval, m_countdownTime, OnCountdownTimerEnd, OnCountdownInterval);
-    }
 
-    public void StartAuction()
-    {
+        m_data.HighestBid.SilentReset(CalculateStartingBid());
         m_data.SetActive(true);
         m_bettingTimer.SetTimer();
-    }       
+    }
+
+    private float CalculateStartingBid()
+    {
+        return m_data.CurrentStorage.SouvenirCount.Value;
+    }      
 
     private void OnCountdownTimerEnd(Timer timer)
     {
         m_data.SetActive(false);
-    }
 
+        foreach (PlayerData player in m_players)
+        {
+            if(m_data.HighestBid.Value == player.CurrentBet.Value)
+            {
+                player.Wins.Value += m_data.CurrentStorage.StorageValue.Value;
+                player.Budget.Value = player.TempBudget.Value;
+                
+            }
+
+            player.EndAuction();
+        }
+    }
     private void OnBettingTimerEnd(Timer timer)
     {
         m_countDown.SetTimer();
@@ -53,7 +67,6 @@ public class AuctionSystem : MonoBehaviour
     private void OnCountdownInterval(float _currentTime)
     {
         m_countdownIntervalReached?.Invoke(m_countDown.CurrentTime);
-        Debug.Log("TIME!");
     }
 
     void Update()

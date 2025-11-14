@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,4 +28,11 @@ public class PlayerData : ScriptableObject
     [SerializeField] private AuctionData m_auctionData;
 
     public void SetPlayerName(string _newName) => PlayerName = _newName;
+
+    public void EndAuction()
+    {
+        m_tempBudget.SilentReset(m_budget.Value);
+        m_currentBet.SilentReset(0);
+        m_preBet.SilentReset(0);
+    }
 }
