@@ -2,6 +2,18 @@ using System;
 using UnityEngine;
 public class Timer
 {
+    public float CurrentTime
+    {
+        get
+        {
+            return m_time;
+        }
+        private set
+        {
+            m_time = value;
+        }
+    }
+
     protected float m_time = 0;
     protected float m_setTime;
 
