@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FloatVariable", menuName = "Scriptable Objects/FloatVariable")]
-public class FloatVariable : ScriptableObject
+[CreateAssetMenu(fileName = "IntVariable", menuName = "Scriptable Objects/IntVariable")]
+public class IntVariable : ScriptableObject
 {
-    private event Action<float> m_valueChanged;
+    private event Action<int> m_valueChanged;
 
-    public event Action<float> ValueChanged
+    public event Action<int> ValueChanged
     {
         add
         {
@@ -20,8 +20,8 @@ public class FloatVariable : ScriptableObject
         }
     }
 
-    private float m_value;
-    public float Value
+    private int m_value;
+    public int Value
     {
         get
         {
@@ -29,7 +29,7 @@ public class FloatVariable : ScriptableObject
         }
         set
         {
-            if(m_value != value)
+            if (m_value != value)
             {
                 m_value = value;
                 m_valueChanged?.Invoke(m_value);
